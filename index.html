@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Questionário</title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+        <script src="./main.js" defer></script>
+        <script src="./Data_storage.js" defer></script>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+            
+
+    </head>
+    <body>
+        
+
+        <main>
+           
+            <section class="user-accounts">
+
+                <div class="sections-btns">
+                    <button id="signUp-btn">Sign Up</button>
+                    <button id="signIn-btn">Sign In</button>
+                </div>
+                
+
+                <form class="signUp-form">
+
+                    <h2>SIGN UP</h2>
+                    <fieldset id="FullName">
+                        <input type="text"  id="Fname" placeholder="First Name" required autocomplete="off">
+                        <input type="text"  id="Lname" placeholder="Last Name" required autocomplete="off">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Birthday</legend>
+                        <input type="date" id="birthday" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <input type="text" id="nationality" placeholder="Nationality" required autocomplete="off">
+                    </fieldset>
+                    
+                    <fieldset id="Email-Phone">
+                        <input type="email" id="email-signUp" oninput="validateEmail()" placeholder="Email" required autocomplete="off">
+                        <input type="tel" id="phone" name="phone" autocomplete="off" placeholder="(99) 9999-9999" pattern="[0-9]+$" title="Número de telefone precisa ser no formato (99) 9999-9999" required="required" maxlength="11" minlength="9">
+                    </fieldset>
+                    
+
+                    <fieldset id="password">
+                        <input type="password" id="passwrd" name="password" placeholder="Password" required autocomplete="off" minlength="6" maxlength="20">
+                        <input type="password" id="confirm-passwrd" name="confirm_password" placeholder="Confirm Password" required autocomplete="off" minlength="6" maxlength="20" > 
+                    </fieldset>
+
+                    <fieldset id="gender">
+                        <legend>Gender</legend>
+                        <input type="radio" id="html" name="fav_language" value="Male" required>
+                        <label for="html">Male</label><br>
+                        <input type="radio" id="css" name="fav_language" value="Female" required>
+                        <label for="css">Female</label><br>
+                    </fieldset>
+
+                    <button type="submit" id="register-btn">REGISTER</button>
+
+                    
+                </form>
+                
+
+                <form class="signIn-form">
+                    <h2>SIGN IN</h2>
+
+                    <div class="user-icon">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+
+                    <fieldset id="signIn-input">
+                        <input type="email" id="logIn-email" placeholder="Email" required autocomplete="off">
+                        <input type="password" id="logIn-passwrd" placeholder="Password" required autocomplete="off">
+                    </fieldset>
+                    
+                    <button type="submit" id="logIn-btn">LOG IN</button>
+                </form>
+                    
+               
+            </section>
+
+
+            <section class="complete-registration">
+                <h2>Thanks for Registering :)</h2>
+                <p><a href="#" id="user-info-btn">Click here</a> to access your information, or <a href="#" id="signUp-section">click here</a> to return to main section</p>
+            </section>
+
+
+            <section class="user-information">
+                <h2>Your Information</h2>
+
+                <div class="information-container">
+                    <table>
+                        <tr>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Birthday</th>
+                            <th>Nationality</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Password</th>
+                            <th>Gender</th>
+                        </tr>
+
+                        <tr>
+                            <td id="td-first_name">*</td>
+                            <td id="td-last_name">*</td>
+                            <td id="td-birthday">*</td>
+                            <td id="td-nationality">*</td>
+                            <td id="td-email">*</td>
+                            <td id="td-phone">*</td>
+                            <td id="td-passwrd">*</td>
+                            <td id="td-gender">*</td>
+                        </tr>
+                        
+                    </table>
+                </div>
+
+                <div class="back-section">
+                    <button class="back-btn">Back</button>
+                </div>
+            </section>
+        </main>
+
+       
+    </body>
+</html>

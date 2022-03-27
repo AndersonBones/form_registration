@@ -1,0 +1,236 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+body{
+    background: #00c6ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+main{
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.sections-btns{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#signUp-btn{
+    background-color: #ed8f03;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.sections-btns button{
+    padding: 10px 80px;
+    cursor: pointer;
+    background-color: #ed8f0386;
+    border: none;
+    color: white;
+    font-size: 1rem;
+}
+
+button{
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+form input{
+    padding: 5px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+}
+form h2{
+    width: 35%;
+    margin: 25px auto;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+
+    border-bottom: 2px solid #ed8f03;
+}
+
+form button{
+    width: 40%;
+    display: block;
+    margin: 30px auto;
+    padding: 15px;
+
+    border: none;
+    background-color: #ed8f03;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 1rem;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    transition: .3s ease;
+}
+
+form button:hover{
+    background-color: #ca7c05;
+}
+
+form input{
+    background-color: transparent;
+}
+
+
+#signIn-input input{
+    width: 80%;
+    margin: 0 auto;
+}
+
+form input[type='date']{
+    color: rgba(255, 255, 255, 0.562);;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.8) brightness(50%) sepia(500%) saturate(10000%) hue-rotate(240deg);
+  }
+
+form input::placeholder{
+    color: rgba(255, 255, 255, 0.562);
+}
+
+form input:focus{
+    outline: none;
+}
+
+
+fieldset{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+}
+
+legend{
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+    color: white;
+
+}
+#gender{
+    width: 40%;
+    display: flex;
+}
+
+#gender label{
+    color: white;
+}
+
+
+.user-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.user-icon i{
+    font-size: 6rem;
+    color: rgba(255, 255, 255, 0.685);
+}
+
+#signIn-input{
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.complete-registration{
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+
+    
+}
+
+.complete-registration a{
+    text-decoration: none;
+    color: #ed8f03;
+    font-weight: 600;
+}
+
+
+.user-information{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    margin-top: 100px;
+}
+.user-information h2{
+    color: white;
+    width: 30%;
+    margin: auto;
+    border-bottom: 2px solid #ed8f03;
+}
+table{
+    border-radius: 0.3rem;
+    padding: 2px;
+
+    background: transparent;
+}
+
+table th{
+    padding: 10px;
+    color: white;
+    background-color: #ed8f03;
+}
+
+table td{
+    padding: 10px;
+}
+
+
+.back-section{
+    width: 40%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.back-btn{
+    width: 100px;
+    padding: 7px 0;
+    border: none;
+    border-radius: 0.2rem;
+    border: 1px solid #ed8f03;
+    background-color: transparent;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.back-btn:hover{
+    background-color: #ed8f03;
+}
