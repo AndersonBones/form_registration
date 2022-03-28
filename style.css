@@ -26,6 +26,7 @@ main{
 
 
 .sections-btns{
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -121,6 +122,14 @@ form input:focus{
     outline: none;
 }
 
+#signIn-input i{
+    position: absolute;
+    bottom: 5px;
+    left: calc(83%);
+    font-size: 1.2rem;
+    color: #212529;
+    cursor: pointer;
+}
 
 fieldset{
     width: 100%;
@@ -161,7 +170,11 @@ legend{
     display: flex;
     gap: 50px;
     flex-direction: column;
+    position: relative;
+
+ 
 }
+
 
 .complete-registration{
     padding: 50px;
@@ -233,4 +246,34 @@ table td{
 
 .back-btn:hover{
     background-color: #ed8f03;
+}
+
+
+
+/* RESONSIVIDADE */
+@media only screen and (max-width: 600px) {
+    .sections-btns{
+        justify-content: center;
+        
+    }
+    .sections-btns button{
+        
+        padding: 8px 60px;
+    }
+
+    input::placeholder, input{
+        font-size: .9rem;
+    }
+
+    #gender label{
+        font-size: 1rem;
+    }
+
+    fieldset{
+        gap: 1.5rem;
+    }
+
+    #gender{
+        gap: 0;
+    }
 }
