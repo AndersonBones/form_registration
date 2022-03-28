@@ -64,4 +64,3 @@ function SetInfoUser(data){
   document.querySelector('#td-passwrd').innerText = data.password;
   document.querySelector('#td-gender').innerText = data.gender;
 }
-
