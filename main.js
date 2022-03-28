@@ -49,7 +49,7 @@ onload = function(){
 }
 
 function SignIn_section(){
-    $(signUp_form).fadeOut();
+    $(signUp_form).hide();
     $(signIn_form).fadeIn();
 
     changeColor_btn(this, signUp_btn)
@@ -58,7 +58,7 @@ signIn_btn.addEventListener('click',SignIn_section)
 
 function SignUp_section(){
     $(signUp_form).fadeIn();
-    $(signIn_form).fadeOut();
+    $(signIn_form).hide();
 
     changeColor_btn(this, signIn_btn)
 }
@@ -74,7 +74,7 @@ signUp_btn.addEventListener('click',SignUp_section)
 
 
 function Confirm_Register(){
-    $(signUp_form.parentElement).fadeOut();
+    $(signUp_form.parentElement).hide();
     
     $(confirm_msg).fadeIn();
 }
@@ -87,7 +87,7 @@ signUp_form.addEventListener('submit', (e)=>{
 
 
 function ShowInformationUser(){
-    $(signIn_form.parentElement).fadeOut();
+    $(signIn_form.parentElement).hide();
     $(user_information).fadeIn();
 }
 
@@ -127,7 +127,6 @@ function Reset_form(){
 var emails_list = [];
 
 db.collection("users").get().then((querySnapshot) => {
-    let email_input = document.querySelector('#email-signUp').value;
     querySnapshot.forEach((doc) => {
         let email_user = doc.data().email;
         emails_list.push(email_user);
@@ -174,4 +173,16 @@ password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 
 
-
+ // Toggle eye icon in password input
+let eye_icon = $("#toggle-passwrd_logIn");
+let input_passwrd = $("#logIn-passwrd");
+eye_icon.click(()=>{
+    if(input_passwrd.attr('type') == 'password'){
+        input_passwrd.attr('type', 'text');
+    }
+    else{
+        input_passwrd.attr('type', 'password');
+    }
+    
+    eye_icon.toggleClass('bi-eye');
+})
