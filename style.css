@@ -253,6 +253,9 @@ table td{
 
 /* RESONSIVIDADE */
 @media only screen and (max-width: 600px) {
+    form{
+        width: 100%;
+    }
     .sections-btns{
         justify-content: center;
         
