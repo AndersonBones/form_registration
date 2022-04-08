@@ -4,11 +4,11 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
+    list-style: none;
 }
 
 body{
     background: #396afc;  /* fallback for old browsers */
-
 }
 
 main{
@@ -48,19 +48,23 @@ button{
     cursor: pointer;
     border-radius: 0.2rem;
 }
+
 form{
-    display: flex;
+    
     padding: 0 20px;
+    display: flex;
+  
     flex-direction: column;
     gap: 22px;
 }
 
 
 form input{
+    background-color: transparent;
     padding: 5px 0;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
     color: white;
 }
 form h2{
@@ -94,10 +98,6 @@ form button:hover{
     background-color: #ca7c05;
 }
 
-form input{
-    background-color: transparent;
-}
-
 
 #signIn-input input{
     width: 80%;
@@ -110,7 +110,7 @@ form input[type='date']{
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
-    filter: invert(0.8) brightness(50%) sepia(500%) saturate(10000%) hue-rotate(240deg);
+    filter: invert(0.8) brightness(10%) sepia(50%) saturate(10%) hue-rotate(240deg);
   }
 
 form input::placeholder{
@@ -193,54 +193,80 @@ legend{
 }
 
 
+
 .user-information{
-    text-align: center;
+    width: 100%;
+    text-align: left;
     display: flex;
+    padding: 0 15px;
     flex-direction: column;
     gap: 50px;
-
+   
     margin-top: 100px;
 }
-.user-information h2{
-    color: white;
-    width: 30%;
+.information-container{
     margin: auto;
-    border-bottom: 2px solid #ed8f03;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
 }
-table{
-    border-radius: 0.3rem;
-    padding: 2px;
-
-    background: transparent;
-}
-
-table th{
-    padding: 10px;
+.user-information h2{
+    
     color: white;
+    display: inline-block;
+    padding: 0 12px;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid #ed8f03;
+}
+
+.main-table{
+    display: flex;
+    flex-direction: row;
+
+    padding: 10px;
+}
+.first-table, .last-table{
+    display:flex;
+    flex-direction: column;
+    
+    gap: 5px;
+}
+.first-table > li{
+    padding: 7px;
+    color: white;
+    text-align: center;
     background-color: #ed8f03;
 }
 
-table td{
-    padding: 10px;
+.last-table > li{
+    padding: 6px;
+    color: white;
+    text-align: center;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid #ed8f03;
 }
 
 
-.back-section{
-    width: 40%;
-    display: flex;
-    align-items: flex-start;
-}
+
 
 .back-btn{
-    width: 100px;
-    padding: 7px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     border: none;
-    border-radius: 0.2rem;
+    border-radius: 50%;
     border: 1px solid #ed8f03;
     background-color: transparent;
     color: white;
     letter-spacing: 2px;
     font-size: 0.8rem;
+}
+.back-btn > i{
+    font-size: 1.3rem;
 }
 
 .back-btn:hover{
@@ -250,21 +276,31 @@ table td{
 
 
 /* RESONSIVIDADE */
-@media only screen and (max-width: 600px) {
-    form{
+
+@media only screen and (max-width: 500px){
+    .user-accounts{
         width: 100%;
     }
+     #signUp-form input[type='text'], #signUp-form input[type='password'], #signUp-form input[type='email'],  #signUp-form input[type='tel'], #signUp-form input[type='date']{
+        width: 130px;
+    }
+    form {
+        width: 100%;
+        padding: 0 40px;
+    }
+
+    #signUp-form > input::placeholder, #signUp-form > input{
+        font-size: .8rem;
+    }
+
     .sections-btns{
         justify-content: center;
         
     }
+
     .sections-btns button{
         
         padding: 8px 60px;
-    }
-
-    input::placeholder, input{
-        font-size: .9rem;
     }
 
     #gender label{
@@ -272,10 +308,11 @@ table td{
     }
 
     fieldset{
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     #gender{
         gap: 0;
     }
 }
+
