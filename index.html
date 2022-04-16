@@ -9,6 +9,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
@@ -71,6 +72,12 @@
                         <label for="css">Female</label><br>
                     </fieldset>
 
+                    <fieldset id="photo">
+                        <h3>Profile Photo</h3>
+                        <label for="profile-photo">Choose File</label>
+                        <input style="border: none;" accept="image/png, image/jpeg, image/gif"  type="file" id="profile-photo" hidden>
+                    </fieldset>
+
                     <button type="submit" id="register-btn">REGISTER</button>
 
                     
@@ -107,6 +114,11 @@
                 <h2>Your Information</h2>
 
                 <div class="information-container">
+
+                    <div class="profile-photo">
+                        <img id="img-photo" src="" alt="">
+                    </div>
+
                     <ul class="main-table">
                         <li>
                             <ul class="first-table">
