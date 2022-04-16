@@ -1,3 +1,3 @@
 # Login and Registration Form
-<img src="./animação.gif">
+<img src="./animation.gif">
 <a href="https://andersonbones.github.io/form_registration/">DEMO 👽</a>
