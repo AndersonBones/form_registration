@@ -1,13 +1,17 @@
 
 
 
+var Id = '';
 function CreatUser(){
   auth.createUserWithEmailAndPassword(infoUser.email, infoUser.password).then((data)=>{
     var userId = data.user.uid;
+    Id = userId;
     
     db.collection('users').doc(userId).set(infoUser).then((docRef)=>{
       // data posted successfully
+      Upload_photo();
       Confirm_Register();
+      
     })
     .catch((error)=>{
       alert('Error posting user data')
@@ -63,4 +67,23 @@ function SetInfoUser(data){
   document.querySelector('#td-phone').innerText = data.phone;
   document.querySelector('#td-passwrd').innerText = data.password;
   document.querySelector('#td-gender').innerText = data.gender;
+  document.querySelector('#img-photo').setAttribute('src', data.photoUrl);
+}
+
+
+function Upload_photo(){
+
+  
+  ref.child(FILE.name).put(FILE).then((snapshot)=>{
+
+    ref.child(FILE.name).getDownloadURL().then((url)=>{ // retorna a URL do arquivo
+
+      db.collection('users').doc(Id).update({photoUrl:url}).then((docRef)=>{
+        // data posted successfully
+        
+      })
+
+    })
+
+  })
 }
