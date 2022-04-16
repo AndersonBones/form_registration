@@ -1,6 +1,8 @@
 let signUp_btn = document.querySelector('#signUp-btn');
 let signUp_form = document.querySelector(".signUp-form");
 
+var fileInput = document.querySelector('#profile-photo');
+
 let signIn_btn = document.querySelector('#signIn-btn');
 let signIn_form = document.querySelector('.signIn-form');
 
@@ -27,18 +29,29 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
+const storage = firebase.storage();
+const ref = storage.ref('/profile_photos');
 
+
+
+var FILE = '';
+fileInput.addEventListener("change",(e)=>{
+    FILE = e.target.files[0]
+})
+
+// ainda falta definir o nome das photos com o gmail do usuario
 
 function CreatInfoUser(){
-  infoUser = {
-    first_name: document.querySelector('#Fname').value,
-    last_name: document.querySelector("#Lname").value,
-    birthday: document.querySelector("#birthday").value,
-    nationality: document.querySelector('#nationality').value,
-    email: document.querySelector("#email-signUp").value,
-    phone: document.querySelector('#phone').value,
-    password: document.querySelector("#passwrd").value,
-    gender: document.querySelector('input[name="fav_language"]:checked').value
+    
+    infoUser = {
+        first_name: document.querySelector('#Fname').value,
+        last_name: document.querySelector("#Lname").value,
+        birthday: document.querySelector("#birthday").value,
+        nationality: document.querySelector('#nationality').value,
+        email: document.querySelector("#email-signUp").value,
+        phone: document.querySelector('#phone').value,
+        password: document.querySelector("#passwrd").value,
+        gender: document.querySelector('input[name="fav_language"]:checked').value
   }
 }
 
@@ -83,7 +96,10 @@ signUp_form.addEventListener('submit', (e)=>{
     e.preventDefault(); 
     CreatInfoUser();
     CreatUser();
+
+    
 });
+
 
 
 function ShowInformationUser(){
